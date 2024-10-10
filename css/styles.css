@@ -1,0 +1,247 @@
+/* ---- Base Rules ---- */
+body {
+    background: rgb(136,203,171);
+    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #fff;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Typography */
+h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 3em;
+    margin: 2em 1rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 2.5em;
+    color: #ffcc00;
+    margin-bottom: 1em;
+}
+
+p {
+    line-height: 1.6em;
+    color: #eee;
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 2em;
+    padding: 0.8em 2em;
+    background-color: #ffcc00;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff9900;
+}
+
+/* ---- Layout Rules ---- */
+main {
+    margin: 10vh 1em 10vh;
+}
+
+.main-hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(0,13,60,1) 0%, rgba(136,203,171,1) 100%);
+    color: #fff;
+    padding: 3em 1em;
+    text-align: center;
+}
+
+section {
+    padding: 6em 1em;
+    position: relative;
+    min-height: 50vh;
+}
+
+/* Responsive Layout */
+@media only screen and (min-width: 600px) {
+    .landing__container {
+        max-width: 60em;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .landing__container {
+        max-width: 80em;
+        margin: 0 auto;
+    }
+
+    .cta-button {
+        font-size: 1.5em;
+    }
+
+    h1 {
+        font-size: 5em;
+    }
+
+    h2 {
+        font-size: 3em;
+    }
+
+    section {
+        padding: 8em 3em;
+    }
+}
+
+/* ---- Module Rules ---- */
+
+/* Navigation */
+.navbar__menu ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: right;
+}
+
+.navbar__menu li {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+.navbar__menu .menu__link {
+    display: inline-block;
+    padding: 1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar__menu .menu__link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+/* Footer */
+.page__footer {
+    background: #000;
+    padding: 3em;
+    color: #fff;
+    text-align: center;
+}
+
+/* Background Effects for Sections */
+section:nth-of-type(even) .landing__container::before,
+section:nth-of-type(odd) .landing__container::before {
+    content: '';
+    position: absolute;
+    z-index: -5;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    opacity: 0;
+    transition: ease 0.5s all;
+}
+
+/* Section Active Class */
+section.your-active-class .landing__container::before {
+    opacity: 1;
+    animation: rotate 4s linear infinite;
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg) translate(-1em) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    }
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 1em;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+#scrollToTopBtn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+
+
+/* Add your previously provided CSS here and expand for more styles */
+
+/* New styling for blog app */
+
+.hidden {
+    display: none;
+}
+
+#postForm input, #postForm textarea {
+    width: 100%;
+    padding: 1em;
+    margin: 1em 0;
+    font-size: 1em;
+}
+
+#postsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-preview {
+    border: 1px solid #eee;
+    padding: 1em;
+    margin: 1em 0;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.post-preview h3 {
+    font-size: 1.5em;
+}
+
+.post-preview p {
+    font-size: 1em;
+    color: #ccc;
+}
+
+button {
+    padding: 0.5em 2em;
+    margin: 1em 0;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f5f;
+}
